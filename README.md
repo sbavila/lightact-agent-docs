@@ -148,7 +148,7 @@ python3 scripts/verify-digests.py                   # checks everything, writes 
 python3 -m unittest discover -s tests               # the script's own tests, no key needed
 ```
 
-A full run from nothing is about 520 requests and one million input tokens, a few US cents at the time of writing. Answers are kept in `verification/cache.json`, so later runs only pay for lines or pages that changed. When you have read a flagged line and the digest is right, add its key and a short note to `verification/reviewed.json`. It then stays out of the to-read list until the line or its page changes.
+A full run from nothing is about 520 requests and one million input tokens, a few US cents at the time of writing. Answers are cached on your own machine in `verification/cache.json` (not kept in git), so repeat runs only pay for lines or pages that changed. When you have read a flagged line and the digest is right, add its key and a short note to `verification/reviewed.json`. It then stays out of the to-read list until the line or its page changes.
 
 ## What is not here
 

@@ -11,8 +11,10 @@ verification/report.md for a person or an agent to read against the page.
 Files in verification/:
     report.md      what to read, written by a full run
     results.json   every statement with its verdict, written by a full run
+                   (local only, not kept in git)
     cache.json     answers keyed by a hash of model, question, statement and page
-                   text, so a later run only pays for what changed
+                   text, so a later run only pays for what changed (local only,
+                   not kept in git)
     reviewed.json  flags a reviewer has read and accepted, keyed by statement
                    and page text; edited by hand
 
