@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380" role="img" aria-labelledby="t d">
+  <title id="t">LightAct docs for agents</title>
+  <desc id="d">The LightAct 4 manual, digested so AI agents can use it. 555 pages become 21 digests and one index. Unofficial.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b26"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffb224" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffb224" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="card"><rect width="1200" height="380" rx="20"/></clipPath>
+  </defs>
+  <g clip-path="url(#card)">
+    <rect width="1200" height="380" fill="url(#bg)"/>
+    <!-- light beams from the right-hand source -->
+    <g opacity="0.9">
+      <polygon points="1104,92 860,-10 980,-10" fill="#ffb224" opacity="0.10"/>
+      <polygon points="1104,92 820,400 960,400" fill="#ffb224" opacity="0.09"/>
+      <polygon points="1104,92 1010,400 1130,400" fill="#ffb224" opacity="0.06"/>
+      <polygon points="1104,92 1210,250 1210,360" fill="#ffb224" opacity="0.08"/>
+    </g>
+    <circle cx="1104" cy="92" r="26" fill="#ffb224"/>
+    <circle cx="1104" cy="92" r="44" fill="none" stroke="#ffb224" stroke-opacity="0.35" stroke-width="2"/>
+    <circle cx="1104" cy="92" r="64" fill="none" stroke="#ffb224" stroke-opacity="0.15" stroke-width="2"/>
+
+    <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+      <text x="64" y="92" fill="#ffb224" font-size="20" font-weight="600" letter-spacing="3">UNOFFICIAL · COMMUNITY</text>
+      <text x="64" y="168" fill="#f2f4f7" font-size="64" font-weight="700">LightAct docs for agents</text>
+      <text x="64" y="218" fill="#aab4c3" font-size="26">The LightAct 4 manual, digested so AI agents can actually use it.</text>
+
+      <g font-size="22" fill="#f2f4f7">
+        <rect x="64" y="268" width="232" height="56" rx="28" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+        <text x="180" y="304" text-anchor="middle"><tspan font-weight="700" fill="#ffb224">555</tspan> manual pages</text>
+        <text x="322" y="304" fill="#6b7686" font-size="26">→</text>
+        <rect x="362" y="268" width="196" height="56" rx="28" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+        <text x="460" y="304" text-anchor="middle"><tspan font-weight="700" fill="#ffb224">21</tspan> digests</text>
+        <text x="584" y="304" fill="#6b7686" font-size="26">→</text>
+        <rect x="624" y="268" width="170" height="56" rx="28" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+        <text x="709" y="304" text-anchor="middle"><tspan font-weight="700" fill="#ffb224">1</tspan> index</text>
+      </g>
+    </g>
+  </g>
+</svg>
