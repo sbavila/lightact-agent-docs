@@ -102,7 +102,7 @@ LightAct sends and receives DMX over Art-Net and sACN. DMX In covers controlling
 - **2D workflow**: map content from a canvas to the fixture in **Canvas Maps**, the same as any other Viewport object. No 3D positioning involved.
 - **3D workflow**: the fixture sources content from a video screen, so their relative position matters. The page also says content can be mapped to fixtures with Throwers.
 - Fixture Properties, **DMX Section**: **Pixel Straddle Universes** (whether one pixel may cross a universe boundary. If unchecked the pixel moves to the next Universe), **Start universe**, **Start channel**.
-- Values only appear in the DMX Data grid when *Send DMX* is enabled in *DMX Out*.
+- After mapping, the DMX Data grid shows the values if *Send DMX* is enabled in *DMX Out*.
 
 ## Set DMX in Layer Layouts
 `docs/dmx/dmx-out/set-dmx-in-layer-layouts.md`

@@ -114,6 +114,30 @@ The digests were written by AI agents that read every page in full, under [this 
 
 They are still summaries. Treat the manual as the authority and the digests as the way to find the right page quickly. If a digest is wrong, please open an issue or a pull request with the manual page that shows it.
 
+## Verification
+
+The digests were written by AI agents, so every statement in them is checked against the manual page it cites. [`scripts/verify-digests.py`](scripts/verify-digests.py) reads each digest, pairs every line with the page named under its heading, and asks [TypeSafe](https://typesafe.ai)'s Jev model one question per line: does the page support this, contradict it, or not mention it? Any answer other than a confident "supports" is flagged for a person or an agent to read against the page.
+
+The last run is in [`verification/report.md`](verification/report.md). On 18 November 2026 it checked 1,880 statements: 1,720 were supported and 160 were flagged. Every flagged line was then read against its page. Six lines were wrong or said more than the page does, and were corrected. The rest were right, and are listed in the report with a reviewer's note.
+
+What the check does not prove:
+
+- That the digests are complete. It checks what a digest says, not what it leaves out.
+- That a supported line is right. The model can miss an error, most often a changed number in a long list. In a test with 206 deliberately wrong lines it caught 202.
+- That the manual is right. A line that repeats a mistake in the manual passes.
+- Anything about lines with no single page to check against: the opening summaries, the closing "For automation and pipelines" sections and the lines starting `Unclear:`.
+
+To run it you need the manual copy (`scripts/fetch.sh`), Python 3 and a TypeSafe API key in the `TYPESAFE_API_KEY` environment variable. Nothing has to be installed.
+
+```sh
+python3 scripts/verify-digests.py --dry-run         # shows the plan and a token estimate, sends nothing
+python3 scripts/verify-digests.py --digest assets   # checks one digest and prints its flags
+python3 scripts/verify-digests.py                   # checks everything, writes verification/report.md
+python3 -m unittest discover -s tests               # the script's own tests, no key needed
+```
+
+A full run from nothing is about 520 requests and one million input tokens, a few US cents at the time of writing. Answers are kept in `verification/cache.json`, so later runs only pay for lines or pages that changed. When you have read a flagged line and the digest is right, add its key and a short note to `verification/reviewed.json`. It then stays out of the to-read list until the line or its page changes.
+
 ## What is not here
 
 - **The manual.** It belongs to LightAct. Read it at [docs.lightact.com](https://docs.lightact.com).

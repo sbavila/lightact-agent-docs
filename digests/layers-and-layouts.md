@@ -333,7 +333,7 @@ Note on names: variable and group names below are copied as the manual prints th
 
 ## Audio
 `docs/layers-and-layouts/stock-layer-templates/content-layer-templates/audio-template.md`
-- Category: Content. Plays audio files. Renders nothing and has no Render group.
+- Category: Content. Plays audio files. No Render group is listed.
 - **Audio**:
   - Audio: the audio asset to play.
   - Output: the Audio output device node to play through.
@@ -381,7 +381,7 @@ Note on names: variable and group names below are copied as the manual prints th
   - Time: which time to show. Options: From beginning of timeline; From the end of timeline; From beginning of layer; From the end of layer.
   - Timeline: which timeline. Ignored for the layer options.
   - Layer: which layer. Ignored for the timeline options.
-  - Seconds: the time value. Set by the layer itself (an output, readable).
+  - Seconds: the time value. Set by the layer itself.
   - Text before: text placed before the value.
   - Text after: text placed after the value.
   - Font color; Background color.
@@ -443,7 +443,8 @@ Note on names: variable and group names below are copied as the manual prints th
 `docs/layers-and-layouts/stock-layer-templates/control-layer-templates/send-message.md`
 - Sends messages through sender nodes such as UDP, TCP or OSC.
 - **Default**:
-  - Device: the sender device to use.
+  - Device: "select the device which you want to use as the receiver of the message".
+  - Unclear: the Setting up steps say to create a *Sender* device node and select it here, so "receiver" looks like a slip for the device the message is sent through.
   - Type: the type of the selected device. Decides whether a UDP, TCP or OSC message is sent. OSC options named in the text: OSC Float, OSC Int, OSC String.
   - Frequency: Run once (sent once each time the playhead enters the layer) or Delay (sent repeatedly with a delay while the playhead is on the layer).
   - Delay: delay duration when Frequency is Delay.
