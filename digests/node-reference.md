@@ -76,7 +76,7 @@ All output Texture unless noted.
 - **Edge detection** (`texture-sobel-ed.md`): Finds edges by calculating the gradient of image intensity using the Sobel operator. In: Texture. kw: sobel.
 - **Texture invert** (`texture-invert.md`): Inverts selected texture channels. In: Texture, Boolean.
 - **Texture channel multiply** (`texture-channel-multiply.md`): Multiplies texture channels. In: Texture, Float.
-- **Texture resize** (`texture-resize.md`): Resizes input by given width and height. In: Resolution. Types: Texture -> Texture, OpenCV -> OpenCV.
+- **Texture resize** (`texture-resize.md`): Resizes input by given width and height. In: Resolution. No outputs listed. Types: Texture -> Texture, OpenCV -> OpenCV.
 - **Texture flip** (`texture-flip.md`): Flips input horizontally or vertically. In: Texture, Boolean.
 - **Texture Blur** (`texture-blur.md`): Blurs a texture. In: Texture, Integer, Float.
 - **Texture Modify** (`texture-adjust.md`): Adjusts hue, contrast, brightness, saturation and vibrance. In: Texture, Float. kw: hue brightness saturation vibrance contrast gamma.

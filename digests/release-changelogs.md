@@ -16,7 +16,7 @@
 ## How are Changelogs generated
 `docs/release-changelogs/how-are-changelogs-generated.md`
 
-- Generated semi-automatically from the LightAct 4 Jira project, grouped by Epic. Tickets outside any Epic come last under "Other Upgrades".
+- Generated semi-automatically from the LightAct 4 Jira project, grouped by Epic. Tickets outside any Epic are listed at the end (the build pages head that part "Other Upgrades").
 - Ticket types: Features (completely new), Improvements (existing, improved), Fixes.
 - Descriptions are developer text rewritten by AI; the page admits results are sometimes "less than ideal".
 - Status: in a Beta some tickets may still be "Testing". Requesters: 3 letter acronyms of users who asked. None listed means LightAct designed it.

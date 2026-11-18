@@ -19,12 +19,15 @@ Source: https://docs.lightact.com (index at `/llms.txt`; every page is served as
 - `digests/` : one digest per section, and `INDEX.md`.
 - `scripts/fetch.sh` : refreshes `docs/` from the live site. It overwrites pages in place and deletes nothing; pages removed upstream are listed in `docs/STALE.txt`.
 - `scripts/digest-brief.md` : the brief used to write the digests. Reuse it when a section changes.
+- `scripts/verify-digests.py` : checks every digest line against the manual page it cites, using TypeSafe's Jev model. It needs the `TYPESAFE_API_KEY` environment variable. See "Verification" in the README.
+- `verification/` : the last report (`report.md`), every result, the answer cache, and the flags a reviewer has read and accepted (`reviewed.json`).
 
 ## Keeping it current
 
 - Check `FETCHED`. If it is more than a month old, or the question is about a release newer than the newest page in `docs/release-changelogs/`, run `scripts/fetch.sh` first.
 - After a refresh, `git diff manifest.sha256` shows which pages changed. Read those pages directly; their digests may be behind. Redo only the digests for sections that changed.
 - For API work, read the page itself (`docs/api/lightact-api.md`), not only the digest. The parameter tables matter and a summary can drop them.
+- After redoing a digest, run `python3 scripts/verify-digests.py` and read every line under "Flagged statements to read" in `verification/report.md` against its page. Fix the digest if it is wrong. If it is right, add the key to `verification/reviewed.json` with a note. Do not change a line only because it was flagged.
 
 ## Things the manual does not cover
 
