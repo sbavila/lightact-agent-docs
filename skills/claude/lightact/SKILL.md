@@ -7,7 +7,7 @@ description: Use when a task involves the LightAct media server - programming or
 
 ## Overview
 
-LightAct questions get answered from the manual, never from memory. Memory of LightAct is thin and gets mixed up with other media servers, which produces confident wrong answers: node names that do not exist, API parameters that are not there, limits nobody documented.
+LightAct questions get answered from the manual, never from memory. Without the manual an agent can only guess at method names, variable names and limits.
 
 This skill carries 21 digests of the LightAct 4 manual, one per section. Each digest entry names the manual page it came from.
 
@@ -55,7 +55,7 @@ Everything else is in the index.
 
 | Mistake | What to do |
 |---|---|
-| Answering from a summary of the API page | The API page changes fastest and its parameter tables matter. Read `docs/api/lightact-api.md` before writing any call. |
+| Answering from a summary of the API page | A summary can drop parameters. Read the method's section in `docs/api/lightact-api.md` before writing any call. |
 | Assuming a layer is "a video clip" as in other servers | A layer is a node graph made from a layer template. Its media, mapping and in and out points are layer variables. Check the template's variable list. |
 | Treating an absent feature as a limit | "Not in the manual" and "not possible" are different. Report the first, do not claim the second. |
 | Carrying disguise or Pixera behaviour across | Use the transitioning digest for the mapping of terms, then confirm the LightAct behaviour in its own section. |
