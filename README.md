@@ -108,6 +108,18 @@ The manual changes over time, so everything here carries a date.
 
 If you are working against a release newer than the `FETCHED` date, run the script and have your agent read the changed pages directly.
 
+## Do you need this?
+
+Maybe not. We tested it on three questions that each need facts from two or three manual pages, asked of the same model three ways:
+
+| Agent had | Result |
+|---|---|
+| Nothing: no web, no digests | Could only guess, and said so |
+| Web access, no digests | All three right. It read 24 pages of the live manual and searched all 34 changelog pages to get there |
+| The skill and digests, no web | All three right, from 20 local files |
+
+So an agent that has web access and takes the trouble to read the live manual does just as well. What this repository adds is that the agent does not need the web, does not need to crawl, and is told to look before it answers. Three questions is a small test; treat it as an indication.
+
 ## How far to trust it
 
 The digests were written by AI agents that read every page in full, under [this brief](scripts/digest-brief.md): keep exact names and values, never infer, and flag anything vague or contradictory with a line starting `Unclear:`.
