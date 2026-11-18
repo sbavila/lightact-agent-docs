@@ -2,9 +2,9 @@
   <img src="assets/hero.svg" alt="LightAct docs for agents: the LightAct 4 manual, digested so AI agents can use it. 555 manual pages, 21 digests, 1 index. Unofficial." width="100%">
 </p>
 
-AI coding agents are good at building tools for media servers, and bad at knowing how a particular media server works. Ask one about [LightAct](https://lightact.com) and it will guess: invented node names, API calls that do not exist, settings from a different product.
+An AI agent can only help with [LightAct](https://lightact.com) as far as it knows LightAct. The LightAct 4 manual is 555 pages, which is a lot to read every time someone asks a question, and without it an agent can only guess.
 
-This repository fixes that for LightAct 4. It gives an agent a short, accurate way into the whole manual:
+This repository gives an agent a short way into the whole manual:
 
 - **21 digests**, one per section of the manual, written for an agent that has to program LightAct, build against its API, or design a content pipeline around it.
 - **One index** that says which digest answers which kind of question.
@@ -100,13 +100,25 @@ Start with [digests/INDEX.md](digests/INDEX.md).
 
 ## Staying current
 
-LightAct updates its manual often, and the API page fastest of all.
+The manual changes over time, so everything here carries a date.
 
 - [`FETCHED`](FETCHED) holds the date the digests were last checked against the live manual.
 - [`manifest.sha256`](manifest.sha256) holds a checksum for every manual page at that date. After you run `scripts/fetch.sh`, `git diff manifest.sha256` shows exactly which pages have changed since the digests were written.
 - The digests are refreshed monthly. Sections whose pages changed are re-read in full and rewritten.
 
 If you are working against a release newer than the `FETCHED` date, run the script and have your agent read the changed pages directly.
+
+## Do you need this?
+
+Maybe not. We tested it on three questions that each need facts from two or three manual pages, asked of the same model three ways:
+
+| Agent had | Result |
+|---|---|
+| Nothing: no web, no digests | Could only guess, and said so |
+| Web access, no digests | All three right. It read 24 pages of the live manual and searched all 34 changelog pages to get there |
+| The skill and digests, no web | All three right, from 20 local files |
+
+So an agent that has web access and takes the trouble to read the live manual does just as well. What this repository adds is that the agent does not need the web, does not need to crawl, and is told to look before it answers. Three questions is a small test; treat it as an indication.
 
 ## How far to trust it
 

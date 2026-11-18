@@ -26,7 +26,7 @@ Source: https://docs.lightact.com (index at `/llms.txt`; every page is served as
 
 - Check `FETCHED`. If it is more than a month old, or the question is about a release newer than the newest page in `docs/release-changelogs/`, run `scripts/fetch.sh` first.
 - After a refresh, `git diff manifest.sha256` shows which pages changed. Read those pages directly; their digests may be behind. Redo only the digests for sections that changed.
-- The API page (`docs/api/lightact-api.md`) changes fastest. For API work, read the page itself, not only the digest.
+- For API work, read the page itself (`docs/api/lightact-api.md`), not only the digest. The parameter tables matter and a summary can drop them.
 - After redoing a digest, run `python3 scripts/verify-digests.py` and read every line under "Flagged statements to read" in `verification/report.md` against its page. Fix the digest if it is wrong. If it is right, add the key to `verification/reviewed.json` with a note. Do not change a line only because it was flagged.
 
 ## Things the manual does not cover
